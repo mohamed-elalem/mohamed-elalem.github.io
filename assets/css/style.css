@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #efefef;
+  font-family: 'Lato';
+  font-weight: 300;
+  font-size: 17px;
+}
+
+h3 {
+  font-size: 150%;
+  font-weight: 400;
+}
+
+.avatar {
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 25vh;
+}
+
+.avatar img {
+  max-height: 25vh;
+  border-radius: 50%;
+}
+
+.full-name h3 {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.labs {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.labs ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.validator {
+  float: right;
+  margin-right: 20px;
+  margin-top: 20px;
+}
