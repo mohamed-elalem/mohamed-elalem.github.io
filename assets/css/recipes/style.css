@@ -82,7 +82,7 @@ ul, ol {
 }
 
 ul {
-  list-style-image: url(/images/pie_icon.gif);
+  list-style-image: url(/assets/images/pie_icon.gif);
 }
 
 .user-comments-title-section {
