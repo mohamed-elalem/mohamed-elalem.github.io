@@ -8,6 +8,8 @@ body {
   font-size: 11pt;
   margin: 0 10px;
   color: #404040;
+  background-image: url(/assets/images/silverware.jpg);
+  background-position: center;
 }
 
 h1, h2, h3,
