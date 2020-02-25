@@ -117,3 +117,7 @@ ul {
   text-align: right;
   margin-bottom: 10px;
 }
+
+.links-section a:link {
+  color: #A4A400;
+}
