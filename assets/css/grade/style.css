@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14pt;
+  font-family: 'Lato';
+  background-color: #efefef;
+}
+
+.form-group {
+  display: grid;
+  flex-direction: column;
+  margin: 2% 0;
+}
+
+.form-section {
+  width: 80%;
+}
+
+.form {
+  width: 60%;
+  margin: auto;
+}
+
+.radio-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.radio-button {
+  margin-left: 3%;
+  text-align: center;
+}
+
+.lying {
+  display: flex;
+  flex-direction: row;
+}
+
+.lying input {
+  margin-right: 1%;
+}
+
+input[type=submit] {
+  padding: 2%;
+  box-shadow: 3px 3px 10px black;
+  border-color: transparent;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #dfdfdf;
+}
+
+input[type=submit]:hover {
+  background-color: #fdfdfd;
+  cursor: pointer;
+}
