@@ -6,11 +6,11 @@
 
 .banner {
   text-align: center;
-  background-image: url(../../../assets/images/bannerbg.png);
+  background-image: url(/assets/images/bannerbg.png);
 }
 
 body {
-  background-image: url(../../../assets/images/background.png);
+  background-image: url(/assets/images/background.png);
   font-size: 8pt;
   font-family: Verdana, Tahoma, serif;
 }
@@ -30,6 +30,7 @@ body {
 
 .starring {
   padding-left: 1vw;
+  padding-bottom: 1vh;
   background-color: rgba(110, 171, 96, 0.7);
 }
 
@@ -68,7 +69,7 @@ body {
 }
 
 .rotten-big {
-  background-image: url(../../../assets/images/rbg.png);
+  background-image: url(/assets/images/rbg.png);
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
 
@@ -89,4 +90,49 @@ body {
 .review p:first-child {
   border-radius: 5%;
   border: 2px solid grey;
+}
+
+.row {
+  margin: 3% 3%;
+  width: 100%;
+}
+
+.col {
+  width: 30%;
+  display: inline-block;
+  margin-right: 3%;
+}
+
+.col .review-content {
+  border: 2px solid grey;
+  border-radius: 8%;
+  padding: 5%;
+  margin-bottom: 2%;
+  background-color: rgba(255, 255, 0, 0.4);
+}
+
+.col .reviewer-info img {
+  float: left;
+}
+
+.col .review-content img {
+  float: left;
+  margin-right: 1%;
+}
+
+.col .review-content p {
+  font-weight: bold;
+}
+
+.page-counter {
+  text-align: center;
+  background-color: rgba(110, 171, 96, 0.7);
+  padding: 1vh 0;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.validation-buttons {
+  float: right;
+  padding-bottom: 3vh;
 }
