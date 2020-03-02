@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Form</title>
+  <link href="/assets/css/html-form/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <section class="form-section">
+    <form class="signup-form" action="">
+      <fieldset>
+        <legend>New User Signup</legend>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" name="name" id="name">
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <div class="radio-buttons">
+            <label>
+              Male
+              <input type="radio" class="form-control" name="gender" value="male" checked />
+            </label>
+            <label>
+              Female
+              <input type="radio" class="form-control" name="gender" value="female" />
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" class="form-control" name="age" min="0" max="199" id="age" />
+        </div>
+        <div class="form-group">
+          <label for="ptype">Personality Type</label>
+          <input type="text" class="form-control" name="ptype" maxlength="4" />
+        </div>
+        <div class="form-group">
+          <label for="os">Favourite OS</label>
+          <select name="os" id="os">
+            <option value="windows">Windows</option>
+            <option value="linux">Linux</option>
+            <option value="macos">Mac OS</option>
+          </select>
+        </div>
+        <div class="form-group multiple-inputs">
+          <label>Seeking Age</label>
+          <div>
+            <input name="sage_min" class="form-control" placeholder="min" type="number" min="0" max="199" />
+            <span>to</span>
+            <input name="sage_max" class="form-control" placeholder="max" type="number" min="0" max="199" />
+          </div>
+        </div>
+        <input class="submit" type="submit" value="Sign Up">
+      </fieldset>
+    </form>
+  </section>
+</body>
+</html>
