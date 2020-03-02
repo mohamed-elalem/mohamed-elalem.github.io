@@ -1,0 +1,29 @@
+Q. What's the difference between a web server and a web container?
+A. A web container is a component of a web server. It is used to manage servlets, jsp, ...
+   A web server is capable of handling HTTP requests and respond with HTTP responses.
+
+Q. What's a servlet?
+A. A servlet is a class which responds to a particular types of requests, most commonly HTTP requests.
+
+Q. How do web servers and web containers interact with servlets?
+A. Web servers creates a new thread and instantiate a new servlet for that request.
+
+Q. Who creates request objects?
+A. The web container creates both the request and response objects.s
+
+Q. What are the states in the servlet lifecycle?
+A. init(), service(), destroy()
+
+Q. Who calls init and when?
+A. The web container calls init() and it calls when the servlet is created.
+
+Q. Which of init, service, and doGet should you override?
+A. doGet() should be overrided. init() should be overrided as needed.
+
+Q. In what sense are servlets multi-threaded?
+A. In a matter that servlets methods doGet() and doPost() are thread-safe.
+   They are functions that are self-contained and should not use any variables or methods
+   outside of the function scope.
+
+Q. What are the implications of this for servlet instance variables?
+A. Servlets will not be thread-safe.

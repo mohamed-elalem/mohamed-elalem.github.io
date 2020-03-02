@@ -1,0 +1,52 @@
+Q. Can post requests be bookmarked? What are the problems?
+A. No, a post request cannot be bookmarked. Because the browser stores
+    the associated URL without any information about the HTTP method or HTTP request body.
+
+Q. What is the purpose of request dispatching?
+A. request dispatcher is an interface that is responsible to dispatch requests to other resources
+    such as servlets and jsp.
+
+Q. What is the difference between redirect and request dispatch?
+A. A redirect fires up a new HTTP request to a given URL where dispatching simply delegates
+   the current request to another resource.
+
+Q. What's an attribute?
+A. An attribute is mutable data that is stored on the server
+    An attribute score can be on the request or the entire session or on the entire application.
+
+Q. What is the difference between attributes and parameters?
+A. A parameter is a read-only data attached to a single request.
+    Attribute is a mutable data that can have multiple scopes (request, session, application).
+
+Q. What are dangers of using attributes?
+A. Attributes are mutable data and they need a synchronized access in order to prevent data corruption
+    such as race conditions.
+
+Q. What does it mean to say that http is stateless? Give an example of a stateful protocol.
+A. What it means that HTTP is stateless is that HTTP requests does not remember any changes
+    Other requests did before them.
+    An example of stateful request can be achieved by adding an instance variable to a servlet.
+    And change the value of the instance variable.
+    Now each request afterwards should view the changes.
+
+Q. Give 5 different methods for maintaining state information (count each attribute scope as one
+method)
+A. 1- Attribute request scope
+   2- Attribute session scope
+   3- Attribute application scope
+   4- Instance variables
+   5- Singletons
+
+Q. How long does a session last?
+A. The session ends either by expiration or the user closing the browser.
+    Expiration time is configured in the application (defaults to 30 seconds).
+
+A. What is a cookie, and how long does a cookie last?
+Q. A cookie is data that is stored on the client side(browser) and it last until expiration
+    or if the user removes it manually.
+
+A. What is the purpose of URL rewriting?
+Q. URL rewriting is used to modify the URL to include the session id in the URL.
+
+A. Why does the request attribute report ‘null’ for the maintaining state demo?
+Q. Because it's on the request scope and it was set on a GET request but retrieved on a POST request.
