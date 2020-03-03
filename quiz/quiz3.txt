@@ -1,0 +1,41 @@
+Q. What is the main value of Java Server Pages?
+A. Seperate display from processing (seperate HTML from java)
+
+Q. How are JSP pages related to servlets?
+A. A jsp will go through a translation phase to be translated into a servlet.
+
+Q. How are JSP pages related to HTML?
+A. JSP pages seperates the HTML from the java code.
+
+Q. Give an example of a JSP scriptlet and show how it will look in the JSP servlet.
+A. <% count = count * 10; %> will become (count = count * 10;)
+
+Q. Give an example of a JSP declaration and show how it will look in the JSP servlet.
+A. <%! int count = 0; %> will become (private int count = 0;)
+
+Q. Give an example of a JSP comment and show how it will look in the JSP servlet.
+A. <%-- This is a comment --%> will become (//This is a comment)
+
+Q. Give an example of a JSP expression and show how it will look in the JSP servlet.
+A. <%= "Hello world!" %> will become (out.print("Hello world!");)
+
+Q. Give an example of a JSP directive and show how it will look in the JSP servlet.
+A. <%@ page import="java.util.Date" %> will become (import java.util.Date;)
+
+Q. Explain how an EL expression is evaluated
+A. It checks for key over all scopes from the request scope up to the application scope
+    If the EL expression is like ${something.another} if something is a bean
+    then another is an attribute to that bean.
+    If something is a map then another is key in that map.
+
+    If the EL expression is like ${something[another]} then it is the same as the previous cases
+    in addition to the case of array.
+    If something is an array then another is an index in that array.
+
+Q. Explain how servlet attributes are involved in EL expressions.
+A. EL expressions are evaluated to the attributes in some scope.
+   It first checks the request scope then session scope then application scope.
+
+Q. Explain how servlets and JSPs use request dispatch to interact.
+A. The servlet forward the request object and response object to the servlet that was
+    created from the jsp to be rendered.
