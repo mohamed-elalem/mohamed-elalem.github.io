@@ -1,0 +1,28 @@
+Q. What is the difference between the following 2 statements?
+A. setTimeout(booyah, 2000) will execute booyah function after 2 seconds.
+   setTimeout(booyah(), 2000) will execute whatever booyah returns after 2 seconds.
+
+Q. What do the following 2 alerts display (answer without running the code)?
+A. both alerts will contain number 6
+
+Q. Write functions booyah1 and booyah2 so that in both cases below, an alert box comes up after 2 seconds that
+says “BOOYAH!”
+
+function booyah1() {
+  alert("BOOYAH!");
+}
+
+function booyah2() {
+  return function() {
+    alert("BOOYAH!");
+  };
+}
+
+What is "Unobtrusive Javascript"? What is the practical application of Unobtrusive Javascript (and the reasons
+for using it)?
+
+Unobtrusive Javascript is the separation between HTML and javascript both within different files.
+Using unobtrusive javascript enhances the seperation of concerns and single responsibilty.
+As the HTML file now is responsible for setting up the structure of the webpage.
+And the javascript file is responsible for providing the tools to interact with this webpage.
+It also making maintaining the codebase easier for developers.
