@@ -1,0 +1,90 @@
+Q. Determine what this Javascript code will print out (without running it):
+x = 1;
+var a = 5;
+var b = 10;
+var c = function(a, b, c) {
+  var x = 10;
+  document.write(x);
+  document.write(a);
+  var f = function(a, b, c) {
+    b = a;
+    document.write(b);
+    b = c;
+    var x = 5;
+  }
+  f(a,b,c);
+  document.write(b);
+}
+c(8,9,10);
+document.write(b);
+document.write(x);
+
+
+A.
+10
+8
+8
+9
+10
+1
+
+Q. What is the difference between a method and function?
+A. A method is a piece of code that is supposed to alter a state like a method inside the object.
+    A function is a piece of code that is not supposed to alter state it only does some computations and optionally returns data.
+
+Q. What does 'this' refer to when used in a Java method?
+A. `this` in Java refers to the current enclosing object.
+
+Q. What does 'this' refer to when used in a JavaScript method?
+A. `this` in Javascript refers to the current enclosing context whether it is a JSON object or a function.
+
+Q. Assume object x is the prototype for object y in Javascript. Object x has a method f( ) containing keyword 'this'.
+When f is called by x.f( ), what does 'this' refer to?
+A. refers to object x.f
+
+Q. What is a free variable in JavaScript?
+A. Free Variable: Free variables are simply the variables that are neither locally declared nor passed as parameter.
+
+Q. Create an object that has properties with name = "fred" and major="music" and a property that is a function
+that takes 2 numbers and returns the smallest of the two, or the square of the two if they are equal.
+A.
+
+{
+  name: "fred",
+  major: "music",
+  minOrSquare: (a, b) => {
+    if (a == b) {
+      return a * b;
+    }
+
+    return Math.min(a, b);
+  }
+}
+
+Q. Write Javascript code for creating three Employee objects using the "new" keyword and a constructor function.
+Employee objects have the following fields: name, salary, position.
+A.
+function Employee(name, salary, position) {
+  this.name = name;
+  this.salary = salary;
+  this.position = position;
+}
+
+Q. Write a Javascript function that takes any number of input arguments and returns the product of the
+arguments.
+A.
+function prod(...nums) {
+  return nums.reduce((total, num) => total * num, 1);
+}
+
+Q. Write an arrow function that returns the maximum of its three input arguments.
+
+max = (a, b, c) => {
+  if (a > b && a > c) {
+    return a;
+  } else if (b > a && b > c) {
+    return b;
+  } else {
+    return c;
+  }
+}
