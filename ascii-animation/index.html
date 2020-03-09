@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ascii Animation</title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/ascii-animation/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-title">
+        <h2>CSE 190 M ASCII Animation Viewer</h2>
+      </div>
+    </header>
+    <section class="animation-section">
+      <div class="animation-box">
+        <textarea class="animation-text-area" cols="80" rows="21" readonly></textarea>
+      </div>
+    </section>
+    <section class="controls-section">
+      <div class="controls">
+        <fieldset>
+          <legend>Play Controls</legend>
+          <button class="button" id="start-button">Start</button>
+          <button class="button" id="stop-button" disabled>Stop</button>
+        </fieldset>
+        <fieldset>
+          <legend>Animation</legend>
+          <select class="animation-select">
+            <option value="blank" selected>Blank</option>
+            <option value="custom">Custom</option>
+            <option value="exercise">Exercise</option>
+            <option value="juggler">Juggler</option>
+            <option value="bike">Bike</option>
+            <option value="dive">Dive</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend>Size</legend>
+          <select class="size-select">
+            <option value="tiny">Tiny</option>
+            <option value="small" selected>Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+            <option value="extra_large">Extra Large</option>
+            <option value="xxl">XXL</option>
+          </select></fieldset>
+        <fieldset>
+          <legend>Turbo</legend>
+          <input type="checkbox" class="turbo-checkbox" />
+        </fieldset>
+      </div>
+    </section>
+    <script src="/assets/javascript/animations.js"></script>
+    <script src="/assets/javascript/ascii-animation.js"></script>
+  </body>
+</html>
