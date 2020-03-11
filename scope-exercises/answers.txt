@@ -43,7 +43,7 @@ When f is called by x.f( ), what does 'this' refer to?
 A. refers to object x.f
 
 Q. What is a free variable in JavaScript?
-A. Free Variable: Free variables are simply the variables that are neither locally declared nor passed as parameter.
+A. Free variables are simply the variables that are neither locally declared nor passed as parameter.
 
 Q. Create an object that has properties with name = "fred" and major="music" and a property that is a function
 that takes 2 numbers and returns the smallest of the two, or the square of the two if they are equal.
