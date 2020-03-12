@@ -10,12 +10,12 @@ $(document).ready(() => {
     game_began = true;
   });
 
-  $('.boundary').mouseenter(() => {
+  $('.boundary').mouseenter((e) => {
     if (game_began === false) {
       return;
     }
     
-    $('.boundary').css({backgroundColor: 'red'});
+    $(e.target).css({backgroundColor: 'red'});
     setTimeout(() => {
       alert('You lost the game');
       restart();
