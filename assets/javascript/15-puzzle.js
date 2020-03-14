@@ -1,7 +1,8 @@
+const moves = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+
 $(document).ready(() => {
   let empty_block = (() => {
-    let row = 3;
-    let col = 3;
+    let row = 3, col = 3;
 
     return {
       row: () => row,
@@ -22,12 +23,21 @@ $(document).ready(() => {
     position_element(elem, idx, true);
   });
 
+  mark_movable_neighbors(empty_block.pos());
+
   $('#shufflebutton').click(() => {
-    const order = random_sequence(15);
+    const order = random_sequence(16);
 
     order.forEach((content, idx) => {
+      if (content === 16) {
+        empty_block.set(Math.floor(idx / 4), idx % 4);
+        return;
+      }
+
       position_element($(`.puzzlepiece[data-idx=${content - 1}]`), idx, false);
-    }); 
+    });
+
+    mark_movable_neighbors(empty_block.pos());
   });
 
   $('.puzzlepiece').click((e) => {
@@ -36,9 +46,13 @@ $(document).ready(() => {
     const new_pos = empty_block.pos();
     const [r, c] = [Math.floor(pos / 4), pos % 4];
     const [nr, nc] = [empty_block.row(), empty_block.col()];
+
+    
     if (Math.abs(r - nr) + Math.abs(c - nc) == 1) {
       empty_block.set(r, c);
       position_element(elem, new_pos);
+      
+      mark_movable_neighbors(pos);
 
       if (checkWin()) {
         setTimeout(() => {
@@ -66,15 +80,25 @@ function random_sequence(n) {
     arr.push(i);
   }
 
-  let random_arr = [];
-  for (let i = 0; i < n; i++) {
-    const pos = Math.ceil(Math.random() * arr.length) - 1;
+  // let random_arr = [];
+  // for (let i = 0; i < n; i++) {
+  //   const pos = Math.ceil(Math.random() * arr.length) - 1;
 
-    random_arr.push(arr[pos]);
-    arr.splice(pos, 1);
+  //   random_arr.push(arr[pos]);
+  //   arr.splice(pos, 1);
+  // }
+
+  let pos = 15;
+  for (let i = 0; i < 100; i++) {
+    const idx = Math.ceil(Math.random() * arr.length) - 1;
+    const tmp = arr[pos];
+    arr[pos] = arr[idx];
+    arr[idx] = tmp;
+
+    pos = idx;
   }
 
-  return random_arr;
+  return arr;
 }
 
 function checkWin() {
@@ -86,4 +110,21 @@ function checkWin() {
   });
 
   return pieces === 0;
+}
+
+function mark_movable_neighbors(pos) {
+  const [r, c] = [Math.floor(pos / 4), pos % 4];
+
+  $('.puzzlepiece').removeClass('movablepiece');
+
+  moves.forEach(move => {
+    let new_coordinate = [r + move[0], c + move[1]];
+    if (new_coordinate[0] < 0 || new_coordinate[0] > 3 || new_coordinate[1] < 0 || new_coordinate[1] > 3) {
+      return;
+    }
+
+    const pos = new_coordinate[0] * 4 + new_coordinate[1];
+    console.log($(`.puzzlepiece[data-pos=${pos}]`));
+    $(`.puzzlepiece[data-pos=${pos}]`).addClass('movablepiece');
+  });
 }
