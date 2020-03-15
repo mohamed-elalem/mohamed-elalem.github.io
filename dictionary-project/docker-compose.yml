@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+  mysql:
+    image: mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_USER: dict
+      MYSQL_PASSWORD: dict
+      MYSQL_DATABASE: dict
+      MYSQL_ROOT_PASSWORD: root
+    container_name: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - dict-data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 9090:80
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: dict
+      PMA_PASSWORD: dict
+    container_name: phpmyadmin
+    depends_on:
+      - mysql
+volumes:
+  dict-data:
