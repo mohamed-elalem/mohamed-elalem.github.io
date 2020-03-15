@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato';
+    font-size: 26px;
+    font-weight: 400;
+    color: #333333;
+    background-color: #f5f5f5;
+}
+
+h2 {
+    font-weight: 300;
+}
+
+.site-header {
+    padding-left: 10px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
+    color: white;
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+
+.search-section {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.search-section .form-control {
+    width: 20vw;
+    height: 5vh;
+    font-size: 1rem;
+}
+
+.search-section .search-btn {
+    background-color: #003333;
+    color: white;
+    width: 8vw;
+    height: 6vh;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.search-section .search-btn:hover {
+    background-color: #000033;
+}
+
+.result-section .record {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.result-section .record div {
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+.result-section .counter {
+    width: 3%;
+    background-image: linear-gradient(rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.9));
+    color: white;
+    border-radius: 70px;
+    text-align: center;
+    margin-left: 5px;
+    max-height: 32px;
+}
+
+.result-section .word-type {
+    width: 7%;
+    background-image: linear-gradient(rgba(0, 255, 0, 0.5), rgba(0, 255, 0, 0.9));
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    max-height: 32px;
+}
+
+.result-section .word-definition {
+    width: 90%;
+    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 0.9));
+    border-radius: 5px;
+    color: white;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    font-weight: 300;
+    font-size: 80%;
+}

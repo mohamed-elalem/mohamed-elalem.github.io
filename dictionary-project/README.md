@@ -32,6 +32,8 @@ Dictionary project is an web application that can be used to lookup for a certai
 
 - Install **cmake**, **docker**, **docker-compose** then run the following commands:
   - `make up`
+  - Wait until **mysql container** is ready for connections.
+    - Verify this by either running `docker logs mysql` or visiting `http://localhost:9090`
   - `make import`
 - Unzip `./dictionary-project.zip` and import it in netbeans.
 - **PHPMyAdmin** is available on `http://localhost:9090`
